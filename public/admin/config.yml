@@ -1,6 +1,34 @@
+# Use DecapBridge PKCE auth
 backend:
   name: git-gateway
+  repo: cofoundy/astro-decap-blog-template
   branch: main
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/5ba896ae-9fc3-4194-91cf-370d96b070a8/pkce
+  auth_token_endpoint: /sites/5ba896ae-9fc3-4194-91cf-370d96b070a8/token
+  gateway_url: https://gateway.decapbridge.com
+
+# See who did what (optional)
+commit_messages:
+  create: Create {{collection}} "{{slug}}" - {{author-name}} via DecapBridge
+  update: Update {{collection}} "{{slug}}" - {{author-name}} via DecapBridge
+  delete: Delete {{collection}} "{{slug}}" - {{author-name}} via DecapBridge
+  uploadMedia: Upload "{{path}}" - {{author-name}} via DecapBridge
+  deleteMedia: Delete "{{path}}" - {{author-name}} via DecapBridge
+
+# Enable PKCE fields
+auth:
+  email_claim: email
+  first_name_claim: first_name
+  last_name_claim: last_name
+  avatar_url_claim: avatar_url
+
+# Better Decap + Bridge logo
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+
+# Site URL
+site_url: https://cofoundy.github.io/astro-decap-blog-template
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
