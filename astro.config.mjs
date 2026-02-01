@@ -6,7 +6,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://cofoundy.github.io',
-	base: '/astro-decap-blog-template',
+	site: 'https://astro-decap-blog-template.netlify.app',
 	integrations: [mdx(), sitemap()],
 });
